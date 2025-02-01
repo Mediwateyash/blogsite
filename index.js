@@ -9,8 +9,24 @@ app.set ("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.set (express.static(path.join(__dirname, "public")));
 
-app.get ('/',(req,res) =>{
-    res.send ('Hello World!')
+let posts = [
+    {
+        username : "Yash diwate",
+        post : "This is my first post",
+    },
+    {
+        username : "Anush Gajbhiye",
+        post : "This is my second post",
+    },
+    {
+        username : "Vaibhav nikumbh",
+        post : "This is my third post",
+        },
+
+]
+
+app.get ("/posts",(req,res) =>{
+    res.send("Server is working");
 }
 )
 
