@@ -26,7 +26,7 @@ let posts = [
 ]
 
 app.get ("/posts",(req,res) =>{
-    res.send("Server is working");
+    res.render("index.ejs", { posts });
 }
 )
 

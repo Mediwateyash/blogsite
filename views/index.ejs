@@ -7,5 +7,12 @@
 </head>
 <body>
     <h1> Quora Posts</h1>
+    <% for(post  of posts) { %>
+        <div>
+            <h3 class="user">@ <%= post.username %></h3>
+            <h4 class="content"><%= post.post %></h4>
+        </div>
+   <% } %> 
 </body>
 </html>
+
