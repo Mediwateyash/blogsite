@@ -10,57 +10,68 @@
 /* Body and Background */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f7fa;
+    background-color: #f9fafb;
     color: #333;
-    line-height: 1.6;
+    line-height: 1.7;
     padding: 20px;
+    font-size: 1rem;
 }
 
 /* Header Style */
 h1 {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: #333;
     margin-bottom: 40px;
+    font-weight: 600;
 }
 
 /* Post Container */
 div {
     background-color: white;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* Username Style */
 .user {
-    font-size: 1.3rem;
-    font-weight: bold;
+    font-size: 1.5rem;
+    font-weight: 700;
     color: #0078d4;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
 }
 
 /* Post Content Style */
 .content {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: #555;
     line-height: 1.6;
+    letter-spacing: 0.5px;
 }
 
 /* Add some spacing between posts */
 div + div {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 /* Media Query for Smaller Screens */
 @media (max-width: 600px) {
     h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
     .user {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
 
     .content {
@@ -68,6 +79,54 @@ div + div {
     }
 
     div {
-        padding: 15px;
+        padding: 20px;
+    }
+}
+
+/* Footer CSS */
+
+/* Footer Container */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Footer Text */
+footer p {
+    margin: 5px 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Footer Links */
+footer a {
+    color: #0078d4;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Small Text */
+footer small {
+    font-size: 0.9rem;
+    color: #bbb;
+    display: block;
+    margin-top: 15px;
+}
+
+/* Footer Responsiveness */
+@media (max-width: 600px) {
+    footer {
+        padding: 20px 0;
+    }
+
+    footer p {
+        font-size: 0.9rem;
     }
 }
