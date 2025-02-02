@@ -3,19 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editpost</title>
+    <title>Edit Post</title>
+    <link rel="stylesheet" href="/style.css"> <!-- Correct path for your stylesheet -->
 </head>
 <body>
-    <p>Edit Your post</p>
-    <a href="/posts">cancel</a>
+    <div class="edit-post-container">
+        <h2>Edit Your Post</h2>
+        <a href="/posts" class="cancel-btn">Cancel</a>
 
-    <p>post id :<%= post.id %></p>
-    <p>post username:<%= post.username %></p>
-    <!-- edit.ejs -->
-<form method="POST" action="/posts/<%= post.id %>?_method=PATCH">
-    <textarea name="post"><%= post.post %></textarea> <!-- Make sure the 'name' attribute is correct -->
-    <button type="submit">Submit</button>
-    
-</form>
+        <div class="post-details">
+            <p><strong>Post ID:</strong> <%= post.id %></p>
+            <p><strong>Post Username:</strong> <%= post.username %></p>
+        </div>
+
+        <!-- Edit Form -->
+        <form method="POST" action="/posts/<%= post.id %>?_method=PATCH" class="edit-form">
+            <textarea name="post" class="input-field" placeholder="Edit your post content"><%= post.post %></textarea>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
 </body>
 </html>

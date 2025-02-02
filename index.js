@@ -13,21 +13,21 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
 
 let posts = [
-    {
-        id: uuidv4(),
-        username: "Yash diwate",
-        post: "This is my first post",
-    },
-    {
-        id: uuidv4(),
-        username: "Anush Gajbhiye",
-        post: "This is my second post",
-    },
-    {
-        id: uuidv4(),
-        username: "Vaibhav nikumbh",
-        post: "This is my third post",
-    },
+        {
+            id: uuidv4(),
+            username: "Yash Diwate",
+            post: "The beauty of life lies not in perfection, but in embracing the imperfections that make us human. Let's make mistakes, learn, and grow from them!"
+        },
+        {
+            id: uuidv4(),
+            username: "Anush Gajbhiye",
+            post: "In the digital age, we often forget the power of human connection. Take a moment to disconnect from your screens and reconnect with the world around you. #MentalHealthMatters"
+        },
+        {
+            id: uuidv4(),
+            username: "Vaibhav Nikumbh",
+            post: "Technology is a tool, not a replacement for genuine human interaction. Let's use it to enhance our relationships and create meaningful experiences."
+        }
 ];
 
 app.get("/posts", (req, res) => {
