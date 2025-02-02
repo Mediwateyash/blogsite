@@ -7,12 +7,16 @@
 </head>
 <body>
     <p>Edit Your post</p>
+    <a href="/posts">cancel</a>
+
     <p>post id :<%= post.id %></p>
     <p>post username:<%= post.username %></p>
-    <form >
-        <textarea ><%= post.post %></textarea>
-        <button>Submit</button>
-    </form>
+    <!-- edit.ejs -->
+<form method="POST" action="/posts/<%= post.id %>?_method=PATCH">
+    <textarea name="post"><%= post.post %></textarea> <!-- Make sure the 'name' attribute is correct -->
+    <button type="submit">Submit</button>
+</form>
+
 
 </form>
     <p></p>
