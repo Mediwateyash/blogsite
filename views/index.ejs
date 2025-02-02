@@ -8,21 +8,23 @@
 </head>
 <body>
     <h1> Quora Posts</h1>
-    <% for(post  of posts) { %>
-        <div>
-            <h3 class="user">@ <%= post.username %></h3>
-            <h4 class="content"><%= post.post %></h4>
-            <br>
-            <a href="http://localhost:3000/posts/<%= post.id %>">See in detail</a>
-            <a href="http://localhost:3000/posts/<%= post.id %>/edit">Edit</a>
-            <form action="http://localhost:3000/posts/<%= post.id %>?_method=DELETE" method="POST">
-                <button>Delete Post</button>
-            </form>
-        </div>
-   <% } %> 
-<a href="http://localhost:3000/posts/new">Create New Post</a>
+    <div class="post-container">
+        <% for(post  of posts) { %>
+            <div class="post-card">
+                <h3 class="user">@ <%= post.username %></h3>
+                <p class="content"><%= post.post %></p>
+                <div class="post-links">
+                    <a href="http://localhost:3000/posts/<%= post.id %>">See in detail</a>
+                    <a href="http://localhost:3000/posts/<%= post.id %>/edit">Edit</a>
+                </div>
+                <form action="http://localhost:3000/posts/<%= post.id %>?_method=DELETE" method="POST">
+                    <button class="delete-btn">Delete Post</button>
+                </form>
+            </div>
+        <% } %> 
+    </div>
+    <a href="http://localhost:3000/posts/new" class="create-btn">Create New Post</a>
 
-   <%- include("footer.ejs") %>
+    <%- include("footer.ejs") %>
 </body>
 </html>
-
