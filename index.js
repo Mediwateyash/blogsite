@@ -56,6 +56,12 @@ app.get('/posts/:id', (req, res) => {
 
     res.render("show.ejs", { post });
 });
+
+app.get('/posts/:id/edit', (req, res) => {
+    let { id } = req.params;
+    let post = posts.find((p) => p.id === id);
+    res.render("edit.ejs",{post} );
+})
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
 });
