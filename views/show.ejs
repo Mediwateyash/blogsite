@@ -7,16 +7,18 @@
     <link rel="stylesheet" href="/style.css"> <!-- Corrected path -->
 </head>
 <body>
-    <h2>Here is Your Post in detail</h2>
-    <a href="/posts">Back to Home</a>
-    <% if (post) { %>
-        <p>Post id : <%= post.id %></p>
-        <div class="post">
-            <h3 class="user">@<%= post.username %></h3>
-            <h4><%= post.post %></h4>
-        </div>
-    <% } else { %>
-        <h3>Post not found!</h3>
-    <% } %>
+    <div class="post-details-container">
+        <h2 class="page-title">Post Details</h2>
+        <a href="/posts" class="back-btn">Back to Home</a>
+        <% if (post) { %>
+            <div class="post">
+                <p class="post-id">Post ID: <%= post.id %></p>
+                <h3 class="user">@<%= post.username %></h3>
+                <h4 class="content"><%= post.post %></h4>
+            </div>
+        <% } else { %>
+            <h3 class="no-post">Post not found!</h3>
+        <% } %>
+    </div>
 </body>
- </html>
+</html>
