@@ -69,6 +69,11 @@ app.patch("/posts/:id", (req, res) => {
         res.status(404).send("Post not found");
     }
 });
+app.delete("/posts/:id", (req, res) => {
+    let { id } = req.params;
+    posts = posts.filter((p) => p.id !== id);
+    res.redirect("/posts");
+})
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
