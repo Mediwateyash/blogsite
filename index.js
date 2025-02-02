@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const port = 3000
 const path = require('path');
+const {v4: uuidv4} = require('uuid');
+
 
 app.use(express.urlencoded({ extended: true }));
 
@@ -12,17 +14,17 @@ app.use(express.static(path.join(__dirname, "public")));
 
 let posts = [
     {
-        id: "1a",
+        id: uuidv4(),
         username : "Yash diwate",
         post : "This is my first post",
     },
     {
-        id: "2b",
+        id: uuidv4(),
         username : "Anush Gajbhiye",
         post : "This is my second post",
     },
     {
-        id: "3c",
+        id: uuidv4(),
         username : "Vaibhav nikumbh",
         post : "This is my third post", 
         },
@@ -40,18 +42,20 @@ app.get ("/posts/new",(req,res) => {
 
 app.post('/upload', (req, res) => {
 let {username , content}=req.body;
-posts.push({username, post:content}); 
+ let id = uuidv4();
+posts.push({id ,username, post:content}); 
     res.redirect("/posts");
 });
 
 app.get('/posts/:id', (req, res) => {
-    let {id}=req.params;
-    console.log(id);
-    let post =posts.find((p)=> id === p.id)
-    console.log(post);
-       res.render("show.ejs", {post});
-    });
+    let { id } = req.params;
+    console.log("Requested ID:", id);
 
+    let post = posts.find((p) => p.id === id);
+    console.log("Found Post:", post);
+
+    res.render("show.ejs", { post });
+});
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
 });
