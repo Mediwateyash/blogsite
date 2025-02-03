@@ -29,7 +29,10 @@ let posts = [
             post: "Technology is a tool, not a replacement for genuine human interaction. Let's use it to enhance our relationships and create meaningful experiences."
         }
 ];
-
+app.get("/", (req, res) => {
+    res.redirect("/posts");
+});
+ 
 app.get("/posts", (req, res) => {
     res.render("index.ejs", { posts });
 });
